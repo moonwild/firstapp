@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/* font-family: 'Merienda', cursive;
+font-family: 'Rock Salt', cursive;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Libre Barcode 128 Text', cursive;
+font-family: 'Lato', sans-serif;*/
+
+
+  /* Navigation link styles */
+nav a {
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+    color: black;
+    margin-right: 20px;
+    margin-left: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+}
+/* nav a:link{
+    color: black;
+}
+
+nav a:visited{
+    color: #607D8B;
+} */
+nav a:hover{
+    color: #039be5;
+}
+
+nav a.active{
+    color: #20a350;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+li{
+    list-style: none;
+}
+
+
+
+
+
+
+
+
+

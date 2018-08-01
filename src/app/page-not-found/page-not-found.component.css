@@ -1,0 +1,11 @@
+p.nfound{
+    margin-top: 100px;
+    color: #285942;
+    font-family: 'Libre Barcode 128 Text', cursive;
+    font-size: 145px;
+}
+
+div.wrappernf{
+    background-color: #e6ee9c;
+    height: 100px;
+}

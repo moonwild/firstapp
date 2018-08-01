@@ -1,0 +1,60 @@
+<div class="bgc">
+
+
+  <div class="wrapper containet-fluid">
+
+    <form [formGroup]="registForm" (ngSubmit)="registIn(registForm.value)">
+
+
+      <h1 class="title">Регистрация</h1>
+      <p>Перед регистрацией необходимо прочесть и согласиться с нашими правилами.
+      </p>
+
+
+      <a href="#">Какие-то правила</a>
+
+
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="1" checked>Я прочел правила и согласен с ними</mat-radio-button>
+        <mat-radio-button value="2">Согласен со всем не читая</mat-radio-button>
+      </mat-radio-group>
+
+      <div class="flex">
+        <mat-form-field>
+          <input matInput type="text" placeholder="Логин" formControlName="login">
+
+          <mat-error *ngIf="registForm.controls.login.invalid && registForm.controls.login.touched">Введите логин</mat-error>
+
+        </mat-form-field>
+
+        <br>
+
+        <mat-form-field>
+          <input matInput type="email" placeholder="Email" formControlName="email">
+
+          <mat-error *ngIf="registForm.controls.email.invalid && registForm.controls.email.touched">Введите email</mat-error>
+
+        </mat-form-field>
+
+        <br>
+
+        <mat-form-field>
+
+          <input matInput type="password" placeholder="Пароль" formControlName="password">
+
+          <mat-error *ngIf="registForm.controls.password.invalid && registForm.controls.password.touched">Введите пароль</mat-error>
+
+          <mat-hint>Пароль должен содержать минимум 6 символов и включать хотя бы одну цифру</mat-hint>
+        </mat-form-field>
+        <br>
+
+
+        <button class="btn-create" mat-flat-button color="primary" type="submit" [disabled]="!registForm.valid">Создать аккаунт</button>
+
+      </div>
+
+
+
+    </form>
+  </div>
+</div>

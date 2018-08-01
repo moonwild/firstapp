@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:400,700');
+
+body {
+    background:#e8e8e8;
+    font-family: 'Muli';
+}
+
+
+/* div.bgcblue{
+    background-color:#58B3F1;
+    height: 800px;
+} */
+
+div .apptitle{
+    color: #263238;
+    font-family: 'Libre Barcode 128 Text', cursive;
+    font-size: 75px;
+    text-align: center;
+}
+
+h2.slogan{
+    font-size: 30px;
+    color: #e8e8e8;
+    text-align: center;
+    font-family: 'Lato';
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+
+.h300{
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+div.bgcpink > .startnow{
+    padding: 20px;
+    color: rgb(51, 51, 236);
+    background-color: rgb(247, 177, 152);
+    font-size: 34px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+div.bgcpink > .startnow:hover{
+    background-color:rgb(224, 147, 91);
+    color: rgb(79, 79, 221);
+
+}
+
+button{
+    text-transform: uppercase;
+}
+
+button.active{
+    background-color: #9ccc65;
+    color:blue;
+}
+
+div.enter-form{
+    margin-right: 0;
+
+}
+

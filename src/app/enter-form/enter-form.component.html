@@ -1,0 +1,73 @@
+<div class="bgc">
+  <div class="wrapper">
+
+    <form [formGroup]="rForm">
+      <div class="form-container">
+        <div class="center-cont">
+          <h1>Авторизация</h1>
+          <div class="flex">
+            <mat-form-field>
+              <input matInput placeholder="Логин" formControlName="name">
+
+            </mat-form-field>
+
+            <br>
+            <mat-form-field>
+
+              <input matInput type="password" placeholder="Пароль" formControlName="password">
+
+              <mat-error *ngIf="rForm.controls.password.invalid && rForm.controls.password.touched">Пароль должен содержать минимум 6 символов</mat-error>
+            </mat-form-field>
+            <br>
+
+
+            <button class="btn-log" mat-flat-button color="primary" [disabled]="!rForm.valid">Войти </button>
+
+          </div>
+
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+<h1>Наши наиболее активные пользователи</h1>
+
+<table mat-table [dataSource]="users" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- ID Column -->
+  <ng-container matColumnDef="user.id">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+    <td mat-cell *matCellDef="let user"> {{user.id}} </td>
+  </ng-container>
+
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="user.name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+    <td mat-cell *matCellDef="let user">
+      <a routerLink="/ef-details/{{user.id}}">{{user.name}}</a>
+    </td>
+  </ng-container>
+
+  <!-- Email Column -->
+  <ng-container matColumnDef="user.email">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+    <td mat-cell *matCellDef="let user"> {{user.email}} </td>
+  </ng-container>
+
+  <!-- Website Column -->
+  <ng-container matColumnDef="user.website">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Website </th>
+    <td mat-cell *matCellDef="let user">
+      <a href="http://{{user.website}}">{{user.website}}</a>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+</table>

@@ -1,0 +1,23 @@
+<div class="bgc">
+  <div class="wrapper">
+    <mat-card>
+      <div *ngIf="book">
+        <div>
+          <div>
+            <label class="label" for="name">Название книги:</label>
+            <mat-form-field>
+              <input matInput [(ngModel)]="book.book">
+            </mat-form-field>
+          </div>
+        </div>
+        <div>
+          <div>
+            <mat-checkbox [(ngModel)]="book.completed">Прочитана!</mat-checkbox>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+
+    <button class="btn-back" mat-flat-button routerLink="/book-list">Назад</button>
+  </div>
+</div>

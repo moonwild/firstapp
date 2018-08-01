@@ -1,0 +1,43 @@
+.bgc{
+    background-color:#f1f8e9;
+    height: 100vh;
+
+}
+
+.wrapper{
+    max-width: 700px;
+    padding-top: 100px;
+    margin: 0px auto;
+    display: flex;
+}
+
+.title{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+a{
+    margin-left: 30px;
+}
+
+.radio-group{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    width: 300px;
+}
+
+.flex{
+    max-width: 700px;
+}
+
+.mat-form-field{
+    width: 700px;
+
+}
+
+.btn-create{
+    margin-top: 30px;
+    display: block;
+    width: 100%;
+}

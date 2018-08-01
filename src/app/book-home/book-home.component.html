@@ -1,0 +1,75 @@
+<div>
+  <h1 class="title">Добавьте книгу</h1>
+  <p>С другой стороны укрепление и развитие структуры играет важную роль в формировании направлений прогрессивного развития.Значимость
+    этих проблем настолько очевидна, что реализация намеченных плановых заданий требуют от нас анализа соответствующийусловий
+    активизации. Повседневная практика показывает, что реализация намеченных плановых заданий позволяет выполнять важные
+    задания по разработке новых предложений. Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности
+    требуют от нас анализа существенных финансовых и административных условий. Значимость этих проблем настолько очевидна,
+    что начало повседневной работы по формированию позиции в значительной степени обуславливает создание систем массового
+    участия.
+  </p>
+
+
+  <div class="wrapper">
+    <div class="container-fluid">
+
+      <div class="form-group form-group-search">
+        <label for="">Поиск</label>
+        <input type="text" class="form-control form-control-search" [(ngModel)]="search">
+        <button type="button" class="btn btn-primary btn-block" (click)="onSearch()">Найти книгу</button>
+
+        <h3 class="title_h4" *ngIf="xy?.title">{{xy?.title}} уже добавлена</h3>
+
+      </div>
+
+      <form #bookForm="ngForm" novalidate>
+
+        <div class="form-group">
+          <label for="">Название книги</label>
+          <input type="text" class="form-control" name="bookName" #name1="ngModel" required [class.is-invalid]="name1.invalid && name1.touched"
+            [(ngModel)]="bookModel.title">
+          <small *ngIf="name1.invalid && name1.touched">Введите название</small>
+        </div>
+
+        <div class="form-group">
+          <label for="">Автор книги</label>
+          <input type="text" class="form-control" name="author" #author="ngModel" required [class.is-invalid]="author.invalid && author.touched"
+            [(ngModel)]="bookModel.author">
+          <small *ngIf="author.invalid && author.touched">Введите автора</small>
+        </div>
+
+        <div class="form-group">
+          <label for="">Год издания</label>
+          <select class="custom-select" name="years" #year="ngModel" required [class.is-invalid]="year.invalid && year.touched" [(ngModel)]="bookModel.year">
+            <option value="">Выберите год </option>
+            <option *ngFor="let year of years">{{ year }}</option>
+          </select>
+
+        </div>
+      </form>
+    </div>
+
+    <button type="button" class="btn btn-primary btn-block" (click)="addBook(bookModel.title, bookModel.author, bookModel.year)"
+      [disabled]="!bookForm.form.valid">Добавить книгу</button>
+
+
+
+    <!-- <h2>Добавленные книги</h2> -->
+    <h4 class="title_h4" *ngIf="countBook>0; else elseBlock">Добавлено книг: {{countBook}}</h4>
+    <ng-template #elseBlock>
+      <h3 class="title_h3">Нет добавленных книг</h3>
+    </ng-template>
+
+    <mat-card *ngFor="let book of books; let i = index">
+      <div class="d-f">
+        <div>{{book.title}} {{book.author}} - {{book.year}} год</div>
+
+        <div>
+          <button mat-icon-button (click)="deliteBook(i)">
+            <mat-icon color="accent">delete_sweep</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

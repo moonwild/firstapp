@@ -1,0 +1,52 @@
+<div class="wrapper">
+
+  <div class="wrap-form">
+    <h3 class="title">Добавить книгу</h3>
+    <form #bookForm="ngForm" novalidate>
+      <div class="form-group">
+        <label for="">Порядковый номер книги</label>
+        <input type="text" class="form-control" name="id" #listid="ngModel" [(ngModel)]="bookList.id" required [class.is-invalid]="listid.invalid && listid.touched">
+        <small *ngIf="listid.invalid && listid.touched">Введите номер</small>
+      </div>
+      <div class="form-group">
+        <label for="">Название книги</label>
+        <input type="text" class="form-control" name="name" #listname="ngModel" [(ngModel)]="bookList.book" required [class.is-invalid]="listname.invalid && listname.touched">
+        <small *ngIf="listname.invalid && listname.touched">Введите название</small>
+      </div>
+      <div class="form-group">
+        <label for="">Автор книги</label>
+        <input type="text" class="form-control" name="author" #listauthor="ngModel" [(ngModel)]="bookList.author" required [class.is-invalid]="listauthor.invalid && listauthor.touched">
+        <small *ngIf="listauthor.invalid && listauthor.touched">Введите автора</small>
+      </div>
+
+    </form>
+    <button class="btn btn-primary btn-block" (click)="onCreate(bookList.id, bookList.author, bookList.book, bookList.completed)">Добавить</button>
+  </div>
+
+
+  <h3 class="title">Что я хочу прочесть</h3>
+  <ul *ngFor="let book of books">
+    <mat-card>
+      <li>№{{book.id}}
+        <br>Author: {{book.name}}
+        <br>Book: {{book.author}}
+      </li>
+    </mat-card>
+  </ul>
+
+
+
+  <ul *ngFor="let book of booksNew; let i = index">
+    <mat-card>
+      <div class="li">
+        <li [class.completed]="book.completed">
+          <span>{{i+1}}.</span>{{book.author}} {{book.book}}</li>
+      </div>
+      <div class="btn-ed">
+        <button mat-flat-button (click)="onEdit(book)">Редактировать</button>
+        <button mat-flat-button (click)="onDelete(i)">Удалить</button>
+      </div>
+    </mat-card>
+  </ul>
+
+</div>
